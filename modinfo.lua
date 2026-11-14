@@ -1,17 +1,24 @@
 name = "Wilson Log to Grass / 威尔逊木头转草"
 description = "威尔逊可以将木头转化为草，投入和产出数量可配置。"
 author = "ra1nyxin"
-version = "1.0.2"
+version = "1.0.3"
 api_version = 10
 dst_compatible = true
 all_clients_require_mod = true
 client_only_mod = false
 
-local values = { 1, 2, 3, 5, 10, 15, 20, 25, 30, 40, 50, 80, 100, 150, 200, 300, 500, 1000, 2000, 5000 }
-local options = {}
-for _, value in ipairs(values) do
-    options[#options + 1] = { description = tostring(value), data = value }
-end
+local options = {
+    { description = "1", data = 1 }, { description = "2", data = 2 },
+    { description = "3", data = 3 }, { description = "5", data = 5 },
+    { description = "10", data = 10 }, { description = "15", data = 15 },
+    { description = "20", data = 20 }, { description = "25", data = 25 },
+    { description = "30", data = 30 }, { description = "40", data = 40 },
+    { description = "50", data = 50 }, { description = "80", data = 80 },
+    { description = "100", data = 100 }, { description = "150", data = 150 },
+    { description = "200", data = 200 }, { description = "300", data = 300 },
+    { description = "500", data = 500 }, { description = "1000", data = 1000 },
+    { description = "2000", data = 2000 }, { description = "5000", data = 5000 },
+}
 
 configuration_options = {
     { name = "log_amount", label = "需要木头 / Logs", options = options, default = 1 },
